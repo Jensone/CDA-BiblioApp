@@ -1,6 +1,17 @@
 <?php 
+/**
+ * Classe Book
+ * 
+ * Cette classe représente un livre
+ * 
+ * @package BiblioApp 
+ * @subpackage Book
+ */
 
-class Book {
+namespace BiblioApp; // On indique que la classe Book est dans le namespace BiblioApp
+
+class Book
+{
     // Propriétés (variables, attributs)
     private $id;
     public $title;
@@ -12,7 +23,7 @@ class Book {
     public $page;
     public $format;
 
-    // TODO : Constructeur
+    // TODO : Constructeur (méthode magique)
 
     // TODO : Méthodes (fonctions)
 
@@ -56,11 +67,9 @@ class Book {
         return $this->format;
     }
 
-    // Setters (mutateurs)
-    public function setId($id): void
-    {
-        $this->id = $id;
-    }
+    /**
+     * Setters (mutateurs)
+     */
     public function setTitle($title): void
     {
         $this->title = $title;
@@ -94,5 +103,4 @@ class Book {
         $this->format = $format;
     }
 
-    
 } // Fin de la classe Book

@@ -26,11 +26,11 @@
                 </ul>
 
                 <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-                    <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Rechercher..." aria-label="Search">
+                    <input type="search" class="form-control form-control rounded-5 " placeholder="Rechercher un livre..." aria-label="Search">
                 </form>
 
                 <div class="text-end">
-                    <button type="button" class="btn btn-warning me-2">Connexion</button>
+                    <button type="button" class="btn btn-warning rounded-5 me-2">Connexion</button>
                 </div>
             </div>
         </div>
