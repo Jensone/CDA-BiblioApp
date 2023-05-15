@@ -21,7 +21,7 @@
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                     <li><a href="/index.php" class="nav-link px-2 text-secondary">BiblioApp</a></li>
                     <li><a href="/books.php" class="nav-link px-2 text-white">Les livres</a></li>
-                    <li><a href="/booking.php" class="nav-link px-2 text-white">Résevations</a></li>
+                    <li><a href="/booking.php" class="nav-link px-2 text-white">Réservations</a></li>
                     <li><a href="/admin.php" class="nav-link px-2 text-white">Gestion</a></li>
                 </ul>
 
@@ -30,7 +30,7 @@
                 </form>
 
                 <div class="text-end">
-                    <button type="button" class="btn btn-outline-light me-2">Connexion</button>
+                    <button type="button" class="btn btn-warning me-2">Connexion</button>
                 </div>
             </div>
         </div>
