@@ -15,37 +15,3 @@ include_once './templates/_header.php';
 <?php
 // Inclusion du footer
 include_once './templates/_footer.php';
-
-Table book
-id
-title
-author
-edition
-isbn
-category
-pages
-format
-
-Table booking
-id
-clientId
-bookId
-dateStart
-dateEnd
-
-Table client
-id
-firstname
-lastname
-email
-phone
-birthdayYear
-address
-city
-deposit
-bookingId
-
-Table user
-id
-username
-password
