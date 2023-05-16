@@ -20,7 +20,7 @@ include_once './templates/_header.php';
 
 <!--Contenu de la page -->
 
-<div class="p-5 text-center bg-body-tertiary rounded-3 m-4">
+<div class="p-5 text-center bg-body-tertiary rounded-3 m-4 bg-svg">
     <h1 class="text-body-emphasis">BiblioApp</h1>
     <p class="col-lg-8 mx-auto fs-5 text-muted">
         L'application de gestion de bibliothèque
@@ -35,8 +35,8 @@ include_once './templates/_header.php';
     </div>
 </div>
 
-<div id="books" class="row gap-3 d-flex justify-content-center">
-    <h2>Les livres de la bibliothèque</h2>
+<div id="books" class="row gap-3 d-flex justify-content-center mb-5">
+    <h2 class="text-center pt-3 pb-3">Les livres de la bibliothèque</h2>
     <?php include_once './templates/_books.php'; ?>
 </div>
 
