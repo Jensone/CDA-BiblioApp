@@ -13,31 +13,23 @@ namespace BiblioApp; // On indique que la classe Booking est dans le namespace B
 class Booking
 {
     // Propriétés (variables, attributs)
-    private $id;
     private $clientId;
     private $bookId;
     private $dateStart;
     private $dateEnd;
 
     // Constructeur (méthode magique)
-    public function __construct(int $id, int $clientId, array $booksId, string $dateStart, string $dateEnd)
+    public function __construct(int $clientId, int $bookId, string $dateStart, string $dateEnd)
     {
-        $this->id = $id;
         $this->clientId = $clientId;
-        $this->booksId[] .= $booksId;
+        $this->bookId = $bookId;
         $this->dateStart = $dateStart;
         $this->dateEnd = $dateEnd;
     }
 
-    // TODO : Méthodes (fonctions)
-
     /**
      * Getters (accesseurs)
      */
-    public function getId(): int
-    {
-        return $this->id;
-    }
     public function getClientId(): int
     {
         return $this->clientId;

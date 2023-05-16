@@ -13,27 +13,21 @@ namespace BiblioApp; // On indique que la classe User est dans le namespace Bibl
 class User
 {
     // Propriétés (variables, attributs)
-    private $id;
     private $username;
     private $password;
+    private $email;
 
     // Constructeur (méthode magique)
-    public function __construct(int $id, string $username, string $password)
+    public function __construct(string $username, string $password, string $email)
     {
-        $this->id = $id;
         $this->username = $username;
         $this->password = password_hash($password, PASSWORD_DEFAULT);
+        $this->email = $email;
     }
-
-    // TODO : Méthodes (fonctions)
 
     /**
      * Getters (accesseurs)
      */
-    public function getId(): int
-    {
-        return $this->id;
-    }
     public function getUsername(): string
     {
         return $this->username;
@@ -41,6 +35,10 @@ class User
     public function getPassword(): string
     {
         return $this->password;
+    }
+    public function getEmail(): int
+    {
+        return $this->email;
     }
 
     /**
@@ -53,6 +51,10 @@ class User
     public function setPassword(string $password): void
     {
         $this->password = password_hash($password, PASSWORD_DEFAULT);
+    }
+    public function setEmail(string $email): void
+    {
+        $this->email = $email;
     }
 
 }

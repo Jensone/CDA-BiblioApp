@@ -13,7 +13,6 @@ namespace BiblioApp; // On indique que la classe Client est dans le namespace Bi
 class Client
 {
     // Propriétés (variables, attributs)
-    private $id;
     private $lastname;
     private $firstname;
     private $email;
@@ -24,7 +23,6 @@ class Client
 
     // Constructeur (méthode magique)
     public function __construct(
-        int $id, 
         string $lastname, 
         string $firstname, 
         string $email, 
@@ -34,7 +32,6 @@ class Client
         bool $deposit
         )
     {
-        $this->id = $id;
         $this->lastname = $lastname;
         $this->firstname = $firstname;
         $this->email = $email;
@@ -44,15 +41,9 @@ class Client
         $this->deposit = $deposit;
     }
 
-    // TODO : Méthodes (fonctions)
-
     /**
      * Getters (accesseurs)
      */
-    public function getId(): int
-    {
-        return $this->id;
-    }
     public function getName(): string
     {
         return $this->lastname;
