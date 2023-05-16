@@ -1,6 +1,6 @@
 -- Création de la table book
 CREATE TABLE book (
-  id INT PRIMARY KEY,
+  id INT PRIMARY KEY AUTO_INCREMENT,
   title VARCHAR(255),
   author VARCHAR(255),
   edition VARCHAR(255),
@@ -12,7 +12,7 @@ CREATE TABLE book (
 
 -- Création de la table booking
 CREATE TABLE booking (
-  id INT PRIMARY KEY,
+  id INT PRIMARY KEY AUTO_INCREMENT,
   client INT,
   book INT,
   dateStart DATE,
@@ -21,7 +21,7 @@ CREATE TABLE booking (
 
 -- Création de la table client
 CREATE TABLE client (
-  id INT PRIMARY KEY,
+  id INT PRIMARY KEY AUTO_INCREMENT,
   firstname VARCHAR(255),
   lastname VARCHAR(255),
   email VARCHAR(255),
@@ -35,7 +35,7 @@ CREATE TABLE client (
 
 -- Création de la table user
 CREATE TABLE users (
-  id INT PRIMARY KEY,
+  id INT PRIMARY KEY AUTO_INCREMENT,
   username VARCHAR(255),
   email VARCHAR(255),
   password VARCHAR(255)
