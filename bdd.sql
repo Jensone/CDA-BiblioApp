@@ -16,7 +16,7 @@ CREATE TABLE booking (
   client INT,
   book INT,
   dateStart DATE,
-  dateEnd DATE,
+  dateEnd DATE
 );
 
 -- Création de la table client
@@ -34,7 +34,7 @@ CREATE TABLE client (
 );
 
 -- Création de la table user
-CREATE TABLE user (
+CREATE TABLE users (
   id INT PRIMARY KEY,
   username VARCHAR(255),
   email VARCHAR(255),
