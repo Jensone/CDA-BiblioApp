@@ -21,9 +21,9 @@ class BookController extends Book
     public static function getAllBooks()
     {
         $pdo = Database::connect();
-        $query = $pdo->prepare('SELECT * FROM book');
+        $query = $pdo->prepare('SELECT * FROM book ORDER BY title ASC');
         $query->execute();
         $result = $query->fetchAll(\PDO::FETCH_ASSOC);
-        var_dump($result);
+        return $result;
     }
 }

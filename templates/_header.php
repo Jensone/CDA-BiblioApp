@@ -36,4 +36,4 @@
         </div>
     </header>
    
-    <main>
+    <main class="container">
