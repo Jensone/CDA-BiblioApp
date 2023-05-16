@@ -11,7 +11,7 @@ use BiblioApp\BookController;
 require_once './classes/Controller/BookController.php';
 
 // Boucle foreach
-foreach (array_slice(BookController::getAllBooks(), 0, 6) as $book) : ?>
+foreach (array_slice(BookController::getAllBooks(), 0, 8) as $book) : ?>
 
     <div class="card" style="width: 18rem;">
         <div class="card-body">
