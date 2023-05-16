@@ -17,10 +17,7 @@ CREATE TABLE booking (
   book INT,
   dateStart DATE,
   dateEnd DATE,
-  FOREIGN KEY (client) REFERENCES client(id),
-  FOREIGN KEY (book) REFERENCES book(id)
 );
-
 
 -- Création de la table client
 CREATE TABLE client (
@@ -40,6 +37,7 @@ CREATE TABLE client (
 CREATE TABLE user (
   id INT PRIMARY KEY,
   username VARCHAR(255),
+  email VARCHAR(255),
   password VARCHAR(255)
 );
 

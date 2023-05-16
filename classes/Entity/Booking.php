@@ -15,7 +15,7 @@ class Booking
     // Propriétés (variables, attributs)
     private $id;
     private $clientId;
-    private $booksId = [];
+    private $bookId;
     private $dateStart;
     private $dateEnd;
 
@@ -42,9 +42,9 @@ class Booking
     {
         return $this->clientId;
     }
-    public function getBooksId(): array
+    public function getBookId(): int
     {
-        return $this->booksId;
+        return $this->bookId;
     }
     public function getDateStart(): string
     {
@@ -62,9 +62,9 @@ class Booking
     {
         $this->clientId = $clientId;
     }
-    public function setBooksId($booksId): void
+    public function setBookId($bookId): void
     {
-        $this->booksId[] .= $booksId;
+        $this->bookId[] .= $bookId;
     }
     public function setDateStart($dateStart): void
     {

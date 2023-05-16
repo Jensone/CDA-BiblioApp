@@ -14,35 +14,49 @@ class Book
 {
     // Propriétés (variables, attributs)
     private $id;
-    public $title;
-    public $description;
-    public $author;
-    public $edition;
-    public $isbn;
-    public $category;
-    public $page;
-    public $format;
+    private $title;
+    private $author;
+    private $edition;
+    private $isbn;
+    private $category;
+    private $pages;
+    private $format;
 
-    // TODO : Constructeur (méthode magique)
+    // Constructeur (méthode magique)
+    public function __construct(
+        string $title,
+        string $author,
+        string $edition,
+        string $isbn,
+        string $category,
+        int $pages,
+        string $format
+        )
+    {
+        $this->title = $title;
+        $this->author = $author;
+        $this->edition = $edition;
+        $this->isbn = $isbn;
+        $this->category = $category;
+        $this->pages = $pages;
+        $this->format = $format;
+
+    }
 
     // TODO : Méthodes (fonctions)
 
     /**
      * Getters (accesseurs)
      */
-    public function getid(): int
+    public function getId(): int
     {
         return $this->id;
     }
-    public function gettitle(): string
+    public function getTitle(): string
     {
         return $this->title;
     }
-    public function getdescription(): string
-    {
-        return $this->description;
-    }
-    public function getauthor(): string
+    public function getAuthor(): string
     {
         return $this->author;
     }
@@ -58,9 +72,9 @@ class Book
     {
         return $this->category;
     }
-    public function getPage(): int
+    public function getPages(): int
     {
-        return $this->page;
+        return $this->pages;
     }
     public function getFormat(): string
     {
@@ -73,10 +87,6 @@ class Book
     public function setTitle($title): void
     {
         $this->title = $title;
-    }
-    public function setDescription($description): void
-    {
-        $this->description = $description;
     }
     public function setAuthor($author): void
     {
@@ -94,9 +104,9 @@ class Book
     {
         $this->category = $category;
     }
-    public function setPage($page): void
+    public function setPages($pages): void
     {
-        $this->page = $page;
+        $this->pages = $pages;
     }
     public function setFormat($format): void
     {
