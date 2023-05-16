@@ -5,11 +5,11 @@
 
 // Chargement des namespaces
 use BiblioApp\Book;
-use BiblioApp\Database;
+use BiblioApp\BookController;
 
 // Chargement des classes
 require_once './classes/Entity/Book.php';
-require_once './config/Database.php';
+require_once './classes/Controller/BookController.php';
 
 
 // Inclusion de l'entête
@@ -25,10 +25,7 @@ $petitPrince = new Book(
     'Poche'
 );
 
-var_dump($petitPrince);
-
-$connexion = new Database();
-$connexion->connect();
+BookController::getAllBooks();
 
 ?>
 

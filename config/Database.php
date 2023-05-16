@@ -19,13 +19,10 @@ class Database
     private $password = 'root';
 
     // Méthodes (fonctions)
-    public function connect(): \PDO
+    public static function connect(): \PDO
     {
         try {
-            $pdo = new \PDO('mysql:host=' . $this->host . ';dbname=' . $this->dbname,$this->user,$this->password,
-                // parametre d'origine
-                // 'mysql:host=localhost;dbname=biblioapp;root;root',
-            );
+            $pdo = new \PDO('mysql:host=localhost;dbname=biblioapp', 'root', 'root',);
             $pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
             echo 'Connexion réussie !';
             return $pdo;
