@@ -2,45 +2,28 @@
 
 /**
  * Page des gestion des livre (CRUD)
- * C: Create (Ajouter) > BookController::addBook() ✅
+ * C: Create (Ajouter) > BookController::addBook() ✅ / BookController::addBooking() 🛑
  * R: Read (Lire) > BookController::getAllBooks() ✅ / BookController::getOneBook() 🛑
  * U: Update (Modifier) > BookController::updateBook() 🛑
  * D: Delete (Supprimer) > BookController::deleteBook() ✅
  */
 
- use BiblioApp\Book;
- use BiblioApp\BookController;
-
-// Chargement des fichiers nécessaires
-include_once './classes/Entity/Book.php';
-include_once './classes/Controller/BookController.php';
-
 // Inclusion de l'en-tête
 include_once './templates/_header.php';
 
-// Traitement du formulaire d'ajout d'un livre
-if(isset($_POST['addBook'])) { // Si le formulaire a été soumis
-    $book = new Book( // On instancie un nouveau livre
-        // On récupère les données du formulaire avec $_POST et on les passe en paramètres du constructeur
-        $_POST['title'],
-        $_POST['author'],
-        $_POST['edition'],
-        $_POST['isbn'],
-        $_POST['category'],
-        $_POST['pages'],
-        $_POST['format']
-    );
-    // On appelle la méthode statique addBook() de la classe BookController en lui passant le livre en paramètre
-    $persist = BookController::addBook($book);
-}
 ?>
 
-<div class="row">
-    <div class="col-12">
-        <h1 class="text-center">Gestion des livres</h1>
-    </div>
+<!--Contenu de la page -->
 
-    <ul class="nav nav-tabs" id="myTab" role="tablist">
+<div class="p-5 text-center bg-body-tertiary rounded-3 m-4 bg-svg">
+    <h1 class="text-body-emphasis">Gestion de la bibliothèque</h1>
+    <p class="col-lg-8 mx-auto fs-5 text-muted">
+        Ajouter ou modifier un livre, créer une réservation
+    </p>
+</div>
+
+<div class="row">
+    <ul class="nav nav-tabs d-flex justify-content-center" id="myTab" role="tablist">
         <li class="nav-item" role="presentation">
             <button class="nav-link active" id="addBook-tab" data-bs-toggle="tab" data-bs-target="#addBook-tab-pane" type="button" role="tab" aria-controls="addBook-tab-pane" aria-selected="true">
                 Ajouter un livre
@@ -57,32 +40,27 @@ if(isset($_POST['addBook'])) { // Si le formulaire a été soumis
             </button>
         </li>
     </ul>
-    <div class="tab-content" id="myTabContent">
+    <div class="tab-content d-flex justify-content-center" id="myTabContent">
         <div class="tab-pane fade show active" id="addBook-tab-pane" role="tabpanel" aria-labelledby="addBook-tab" tabindex="0">
-            <div class="col-6">
-                <h3 class="m-4">Formulaire d'ajout d'un livre</h3>
-                <!-- Inclusion du formulaire d'ajout d'un livre -->
-                <?php include_once './templates/_form-add.php' ?>
-            </div>
+            <h3 class="m-4">Formulaire d'ajout d'un livre</h3>
+            <!-- Inclusion du formulaire d'ajout d'un livre -->
+            <?php include_once './templates/_form-add.php' ?>
         </div>
         <div class="tab-pane fade" id="updateBook-tab-pane" role="tabpanel" aria-labelledby="updateBook-tab" tabindex="0">
-            <div class="col-6">
-                <h3 class="m-4">Formulaire de modification d'un livre</h3>
-                <!-- Inclusion du formulaire de modification d'un livre -->
-                <?php include_once './templates/_form-edit.php' ?>
-            </div>
+            <h3 class="m-4">Formulaire de modification d'un livre</h3>
+            <!-- Inclusion du formulaire de modification d'un livre -->
+            <?php include_once './templates/_form-edit.php' ?>
+        </div>
         <div class="tab-pane fade" id="addBooking-tab-pane" role="tabpanel" aria-labelledby="addBooking-tab" tabindex="0">
-            <div class="col-6">
-                <h3 class="m-4">Formulaire de création d'une réservation</h3>
-                <!-- Inclusion du formulaire de création d'une réservation -->
-                <?php include_once './templates/_form-addBooking.php' ?>
-            </div>
+            <h3 class="m-4">Formulaire de création d'une réservation</h3>
+            <!-- Inclusion du formulaire de création d'une réservation -->
+            <?php include_once './templates/_form-addBooking.php' ?>
         </div>
     </div>
 </div>
 
+<!--Fin du contenu de la page -->
 
 <?php
-
 // Inclusion du footer
 include_once './templates/_footer.php';
