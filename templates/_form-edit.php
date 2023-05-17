@@ -1,6 +1,6 @@
 <?php
 /**
- * TODO: Formulaire de création d'une réservation
+ * TODO: Formulaire de création de la modification d'un livre
  * 
  * @package BiblioApp
  */
@@ -15,17 +15,19 @@ $books = BookController::getBooksIdAndTitle();
 
 ?>
 
-<form action="/admin.php" method="post">
-
-    <div class="input-group mb-3">
-        <select name="book" id="book">
+<form action="" method="post">
+    <div class="input-group mb-3 d-flex gap-2">
+        <select name="book" id="book" class="form-select">
             <option value="0">Choisir un livre</option>
             <?php foreach ($books as $book) : ?>
                 <option value="<?= $book['id'] ?>"><?= $book['title'] ?></option>
             <?php endforeach; ?>
         </select>
+        <button name="searchBook" type="submit" class="btn btn-primary rounded-5">Charger les données</button>
     </div>
+</form>
 
+<form action="/admin.php" method="post" id="findBook">
     <div class="input-group mb-3">
         <span class="input-group-text" id="inputGroup-sizing-default">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 512 512"><path fill="#000000" d="M256 512a256 256 0 1 0 0-512a256 256 0 1 0 0 512zm-40-176h24v-64h-24c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24h-80c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64a32 32 0 1 1 0-64z"/></svg>
