@@ -5,11 +5,9 @@
  */
 
 // Chargement des namespaces
-use BiblioApp\Book;
 use BiblioApp\BookController;
 
 // Chargement des classes
-require_once './classes/Entity/Book.php';
 require_once './classes/Controller/BookController.php';
 
 
