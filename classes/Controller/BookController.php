@@ -14,8 +14,8 @@ namespace BiblioApp; // On indique que la classe Book est dans le namespace Bibl
 use BiblioApp\Database;
 
 // Import des classes nécessaires
-require_once 'classes/Entity/Book.php';
-require_once '././config/Database.php';
+require_once __DIR__ . '/../Entity/Book.php';
+require_once __DIR__ . '/../../config/Database.php';
 
 class BookController extends Book
 {
@@ -57,6 +57,29 @@ class BookController extends Book
 
         // On récupère les données
         $result = $query->fetchAll(\PDO::FETCH_ASSOC);
+
+        // On retourne les données
+        return $result;
+    }
+
+    /**
+     * Méthode statique de récupération d'un livre
+     * 
+     * @return array
+     */
+    public static function getOneBook($id): array
+    {
+        // On se connecte à la bdd
+        $pdo = Database::connect();
+
+        // On prépare la requête de sélection
+        $query = $pdo->prepare("SELECT * FROM book WHERE id = $id");
+
+        // On exécute la requête
+        $query->execute();
+
+        // On récupère les données
+        $result = $query->fetch(\PDO::FETCH_ASSOC);
 
         // On retourne les données
         return $result;
