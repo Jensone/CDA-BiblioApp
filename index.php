@@ -35,7 +35,22 @@ include_once './templates/_header.php';
 
 <div id="books" class="row gap-3 d-flex justify-content-center mb-5">
     <h2 class="text-center pt-3 pb-3">Les dernières entrées</h2>
-    <?php include_once './templates/_books.php'; ?>
+
+    <?php foreach (array_slice(BookController::getAllBooks(), 0, 8) as $book) : ?>
+
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title"><?= $book['title'] ?></h5>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><?= $book['author'] ?></li>
+                <li class="list-group-item"><?= $book['edition'] ?></li>
+                <li class="list-group-item"><?= $book['category'] ?></li>
+            </ul>
+        </div>
+
+    <?php endforeach; ?>
+
 </div>
 
 <!--Fin du contenu de la page -->
@@ -43,11 +58,3 @@ include_once './templates/_header.php';
 <?php
 // Inclusion du footer
 include_once './templates/_footer.php';
-
-
-/**
- * DONE : Améliorer l'UI
- * DONE : Créer un formulaire d'ajout de livre
- * TODO : Afficher les réservations
- * TODO : Créer un formulaire de réservation
- */

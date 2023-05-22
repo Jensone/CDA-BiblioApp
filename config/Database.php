@@ -16,7 +16,7 @@ class Database
     public static function connect(): \PDO
     {
         try {
-            $pdo = new \PDO('mysql:host=localhost;dbname=biblioapp', 'root', 'root',);
+            $pdo = new \PDO('mysql:host=localhost;port=8888;dbname=biblioapp', 'root', 'root');
             $pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
             return $pdo;
         } catch (\PDOException $e) {
