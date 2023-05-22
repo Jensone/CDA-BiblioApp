@@ -1,35 +1,4 @@
-<?php
-
-/**
- * Page des gestion des livre (CRUD)
- * C: Create (Ajouter) > BookController::addBook() ✅
- */
-
-use BiblioApp\Book;
-use BiblioApp\BookController;
-
-// Chargement des fichiers nécessaires
-include_once './classes/Entity/Book.php';
-include_once './classes/Controller/BookController.php';
-
-// Traitement du formulaire d'ajout d'un livre
-if (isset($_POST['addBook'])) { // Si le formulaire a été soumis
-    $book = new Book( // On instancie un nouveau livre
-        // On récupère les données du formulaire avec $_POST et on les passe en paramètres du constructeur
-        $_POST['title'],
-        $_POST['author'],
-        $_POST['edition'],
-        $_POST['isbn'],
-        $_POST['category'],
-        $_POST['pages'],
-        $_POST['format']
-    );
-    // On appelle la méthode statique addBook() de la classe BookController en lui passant le livre en paramètre
-    $persist = BookController::addBook($book);
-}
-?>
-
-<form action="" method="post">
+<form action="../config/forms.php" method="post">
 
     <div class="input-group mb-3">
         <span class="input-group-text" id="inputGroup-sizing-default">
