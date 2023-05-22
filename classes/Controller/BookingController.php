@@ -59,9 +59,9 @@ class BookingController extends Booking
     {
         // Connexion à la bdd et préparation de la requête
         $query = Database::connect()->prepare("
-            INSERT INTO booking (client, book, dateStart, dateEnd)
-            VALUES (:client, :book, :dateStart, :dateEnd"
-        );
+        INSERT INTO booking (client, book, dateStart, dateEnd) 
+        VALUES (:client, :book, :dateStart, :dateEnd)
+        ");
 
         // Bind des paramètres de la requête
         // (association des paramètres de la requête avec les données)
