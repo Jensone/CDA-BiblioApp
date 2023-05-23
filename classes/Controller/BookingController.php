@@ -31,13 +31,10 @@ class BookingController extends Booking
         $pdo = Database::connect();
 
         // On prépare la requête de sélection
-        $query = $pdo->prepare('
-            SELECT booking.id, booking.dateStart, booking.dateEnd, client.firstname, client.lastname, book.title
-            FROM booking
-            JOIN client ON booking.client = client.id
-            JOIN book ON booking.book = book.id
+        $query = $pdo->prepare("SELECT booking.id, booking.dateStart, booking.dateEnd, client.firstname, client.lastname, book.title
+            FROM booking JOIN client ON booking.client = client.id JOIN book ON booking.book = book.id
             ORDER BY booking.dateStart DESC;
-            ');
+            ");
 
         // On exécute la requête
         $query->execute();

@@ -32,10 +32,3 @@ include_once './templates/_header.php';
 <?php
 // Inclusion du footer
 include_once './templates/_footer.php';
-
-
-/**
- * DONE : Créer un formulaire de réservation
- * TODO : Créer un formulaire de modification de livre
- * TODO: Déploiement
- */

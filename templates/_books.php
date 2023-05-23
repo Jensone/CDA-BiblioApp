@@ -76,7 +76,7 @@ foreach (BookController::getAllBooks() as $book) : ?>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary rounded-5" data-bs-dismiss="modal">Fermer</button>
-                    <a href="/admin.php" class="btn btn-primary rounded-5">Réservation</a>
+                    <a href="/config/forms.php?deleteBook=<?= $book['id'] ?>" class="btn btn-danger rounded-5">Supprimer</a>
                 </div>
             </div>
         </div>

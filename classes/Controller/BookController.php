@@ -11,6 +11,7 @@
 namespace BiblioApp; // On indique que la classe Book est dans le namespace BiblioApp
 
 // Import des namespaces nécessaires
+use PDO;
 use BiblioApp\Database;
 
 // Import des classes nécessaires
@@ -113,7 +114,7 @@ class BookController extends Book
         $query->execute();
 
         // On redirige vers la page des livres
-        header('Location: /index.php');
+        header("Location: " . $_SERVER["HTTP_REFERER"]);
     }
 
     /** 
@@ -137,6 +138,32 @@ class BookController extends Book
         $query->execute();
 
         // On redirige vers la page des livres
-        header('Location: /books.php');
+        header("Location: " . $_SERVER["HTTP_REFERER"]);
+    }
+
+    public static function editBook()
+    {
+        // Traduction de la requête SQL : "Mets à jour les données de la table books en fonction des valeurs de :title, :author, etc. là où l'id est égal à :id"
+        $query = Database::connect()->prepare("
+            UPDATE book SET title = :title, author = :author, edition = :edition, 
+            isbn = :isbn, category = :category, pages = :pages, format = :format 
+            WHERE id = :id"
+        ); 
+
+        // BindParam des valeurs
+        $query->bindParam(':id', $_POST['id'], PDO::PARAM_INT);
+        $query->bindParam(':title', $_POST['title'], PDO::PARAM_STR);
+        $query->bindParam(':author', $_POST['author'], PDO::PARAM_STR);
+        $query->bindParam(':edition', $_POST['edition'], PDO::PARAM_STR);
+        $query->bindParam(':isbn', $_POST['isbn'], PDO::PARAM_STR);
+        $query->bindParam(':category', $_POST['category'], PDO::PARAM_STR);
+        $query->bindParam(':pages', $_POST['pages'], PDO::PARAM_INT);
+        $query->bindParam(':format', $_POST['format'], PDO::PARAM_STR);
+
+        // Exécution de la requête
+        $query->execute();
+
+        header("Location: " . $_SERVER["HTTP_REFERER"]);
+
     }
 }
