@@ -58,10 +58,7 @@ class BookingController extends Booking
     public static function addBooking()
     {
         // Connexion à la bdd et préparation de la requête
-        $query = Database::connect()->prepare("
-        INSERT INTO booking (client, book, dateStart, dateEnd) 
-        VALUES (:client, :book, :dateStart, :dateEnd)
-        ");
+        $query = Database::connect()->prepare("INSERT INTO booking (client, book, dateStart, dateEnd) VALUES (:client, :book, :dateStart, :dateEnd)");
 
         // Bind des paramètres de la requête
         // (association des paramètres de la requête avec les données)

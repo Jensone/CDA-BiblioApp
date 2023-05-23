@@ -1,15 +1,8 @@
 <?php
 
 /**
- * Page d'accueil de l'application
+ * Page d'affichage des livres
  */
-
-// Chargement des namespaces
-use BiblioApp\BookController;
-
-// Chargement des classes
-require_once './classes/Controller/BookController.php';
-
 
 // Inclusion de l'entête
 include_once './templates/_header.php';
@@ -24,9 +17,6 @@ include_once './templates/_header.php';
         Page d'affichage des livres de la bibliothèque
     </p>
     <div class="d-inline-flex gap-2 mb-5">
-        <a href="/admin.php" class="d-inline-flex align-items-center btn btn-primary btn-lg px-4 rounded-pill" type="button">
-            Gérer les livres
-        </a>
         <a href="/booking.php" class="btn btn-outline-secondary btn-lg px-4 rounded-pill" type="button">
             Les réservations
         </a>
@@ -45,6 +35,7 @@ include_once './templates/_footer.php';
 
 
 /**
- * TODO : Créer un formulaire de réservation
+ * DONE : Créer un formulaire de réservation
  * TODO : Créer un formulaire de modification de livre
+ * TODO: Déploiement
  */

@@ -22,7 +22,7 @@ require_once './templates/_header.php';
 <div class="p-5 text-center bg-body-tertiary rounded-3 m-4 bg-svg">
     <h1 class="text-body-emphasis">Les réservations</h1>
     <p class="lead">Retrouvez ici toutes les réservations</p>
-    <a href="/admin.php" class="btn btn-success rounded-5">Ajouter une réservation</a>
+    <a href="#" class="btn btn-success rounded-5">Ajouter une réservation</a>
 </div>
 
 <div class="row">

@@ -1,61 +1,17 @@
-<?php
-/**
- * TODO: Formulaire de création de la modification d'un livre
- * 
- * @package BiblioApp
- */
-
-use BiblioApp\BookController;
- 
-// Chargement des classes
-require_once './classes/Controller/BookController.php';
-
-// On récupère tous les id et titre des livres
-$books = BookController::getBooksIdAndTitle();
-
-?>
-
-<form action="" method="post">
-    <div class="input-group mb-3 d-flex gap-2">
-        <select name="book" id="book" class="form-select">
-            <option value="0">Choisir un livre</option>
-            <?php foreach ($books as $book) : ?>
-                <option value="<?= $book['id'] ?>"><?= $book['title'] ?></option>
-            <?php endforeach; ?>
-        </select>
-        <button name="searchBook" type="submit" class="btn btn-primary rounded-5">Charger les données</button>
-    </div>
-</form>
-
-<form action="/admin.php" method="post" id="findBook">
+<form action="../config/forms.php" method="post" id="findBook">
     <div class="input-group mb-3">
         <span class="input-group-text" id="inputGroup-sizing-default">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 512 512"><path fill="#000000" d="M256 512a256 256 0 1 0 0-512a256 256 0 1 0 0 512zm-40-176h24v-64h-24c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24h-80c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64a32 32 0 1 1 0-64z"/></svg>
         </span>
-        <input 
-            name="title"
-            required
-            placeholder="Titre du livre"
-            type="text" 
-            class="form-control" 
-            aria-label="Sizing example input" 
-            aria-describedby="inputGroup-sizing-default"
-            >
+        <input hidden type="text" name="id" value="<?= $book['id'] ?>">
+        <input name="title" required value="<?= $book['title'] ?>" type="text" class="form-control"  aria-label="Sizing example input"  aria-describedby="inputGroup-sizing-default">
     </div>
 
     <div class="input-group mb-3">
         <span class="input-group-text" id="inputGroup-sizing-default">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 512 512"><path fill="#000000" d="M399 384.2c-22.1-38.4-63.6-64.2-111-64.2h-64c-47.4 0-88.9 25.8-111 64.2c35.2 39.2 86.2 63.8 143 63.8s107.8-24.7 143-63.8zM0 256a256 256 0 1 1 512 0a256 256 0 1 1-512 0zm256 16a72 72 0 1 0 0-144a72 72 0 1 0 0 144z"/></svg>
         </span>
-        <input 
-            name="author"
-            required
-            placeholder="Auteur.rice : Prénom Nom"
-            type="text" 
-            class="form-control" 
-            aria-label="Sizing example input" 
-            aria-describedby="inputGroup-sizing-default"
-            >
+        <input name="author" requiredvalue="<?= $book['author'] ?>" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
     </div>
 
     <div class="input-group mb-3">
@@ -65,7 +21,7 @@ $books = BookController::getBooksIdAndTitle();
         <input 
             name="edition"
             required
-            placeholder="Édition"
+            value="<?= $book['edition'] ?>"
             type="text" 
             class="form-control" 
             aria-label="Sizing example input" 
@@ -80,7 +36,7 @@ $books = BookController::getBooksIdAndTitle();
         <input 
             name="isbn"
             required
-            placeholder="ISBN : 978-2-1234-5680-3"
+            value="<?= $book['isbn'] ?>"
             type="text" 
             class="form-control" 
             aria-label="Sizing example input" 
@@ -95,7 +51,7 @@ $books = BookController::getBooksIdAndTitle();
         <input 
             name="category"
             required
-            placeholder="Catégorie du livre"
+            value="<?= $book['category'] ?>"
             type="text" 
             class="form-control" 
             aria-label="Sizing example input" 
@@ -110,7 +66,7 @@ $books = BookController::getBooksIdAndTitle();
         <input 
             name="pages"
             required
-            placeholder="Nombre de pages : 230"
+            value="<?= $book['pages'] ?>"
             type="number" 
             class="form-control" 
             aria-label="Sizing example input" 
@@ -125,7 +81,7 @@ $books = BookController::getBooksIdAndTitle();
         <input 
             name="format"
             required
-            placeholder="Format"
+            value="<?= $book['format'] ?>"
             type="text" 
             class="form-control" 
             aria-label="Sizing example input" 
@@ -133,6 +89,6 @@ $books = BookController::getBooksIdAndTitle();
             >
     </div>
 
-    <input name="addBook" type="submit" class="btn btn-primary rounded-5" value="Ajouter">
+    <input name="editBook" type="submit" class="btn btn-primary rounded-5" value="Enregistrer">
 
 </form>
