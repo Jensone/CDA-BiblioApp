@@ -58,41 +58,10 @@ if (isset($_POST['editBook'])) {
         $_POST['format']
     );
     // Cette fois-ci, on récupère l'id du livre à modifier
-    // $persist = BookController::editBook($book, $_POST['id']);
+    $persist = BookController::editBook($book, $_POST['id']);
+}
 
-    function editBook()
-    {
-        // Traduction de la requête SQL : "Mets à jour les données de la table books en fonction des valeurs de :title, :author, etc. là où l'id est égal à :id"
-        $query = Database::connect()->prepare("
-            UPDATE book SET title = :title, 
-            author = :author, 
-            edition = :edition, 
-            isbn = :isbn, 
-            category = :category, 
-            pages = :pages, 
-            format = :format 
-            WHERE id = :id"
-        ); 
-
-        // BindParam des valeurs
-        $query->bindParam(':id', $_POST['id'], PDO::PARAM_INT);
-        $query->bindParam(':title', $_POST['title'], PDO::PARAM_STR);
-        $query->bindParam(':author', $_POST['author'], PDO::PARAM_STR);
-        $query->bindParam(':edition', $_POST['edition'], PDO::PARAM_STR);
-        $query->bindParam(':isbn', $_POST['isbn'], PDO::PARAM_STR);
-        $query->bindParam(':category', $_POST['category'], PDO::PARAM_STR);
-        $query->bindParam(':pages', $_POST['pages'], PDO::PARAM_INT);
-        $query->bindParam(':format', $_POST['format'], PDO::PARAM_STR);
-
-        // Exécution de la requête
-        $result = $query->execute();
-
-        var_dump($result);
-        // Redirection vers la page d'accueil
-        // header('Location: /index.php');
-
-    }
-
-    editBook();
-
+// Suppression d'un livre
+if (isset($_GET['deleteBook'])) {
+    $delete = BookController::deleteBook($_GET['deleteBook']);
 }

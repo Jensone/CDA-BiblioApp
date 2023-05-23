@@ -11,7 +11,7 @@
         <span class="input-group-text" id="inputGroup-sizing-default">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 512 512"><path fill="#000000" d="M399 384.2c-22.1-38.4-63.6-64.2-111-64.2h-64c-47.4 0-88.9 25.8-111 64.2c35.2 39.2 86.2 63.8 143 63.8s107.8-24.7 143-63.8zM0 256a256 256 0 1 1 512 0a256 256 0 1 1-512 0zm256 16a72 72 0 1 0 0-144a72 72 0 1 0 0 144z"/></svg>
         </span>
-        <input name="author" requiredvalue="<?= $book['author'] ?>" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        <input name="author"requiredvalue="<?= $book['author'] ?>" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
     </div>
 
     <div class="input-group mb-3">
